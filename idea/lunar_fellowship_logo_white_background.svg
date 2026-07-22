@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" role="img" aria-labelledby="title desc">
+<title id="title">The Lunar Fellowship — 月曜同道会</title>
+<desc id="desc">Vector reconstruction of the Lunar Fellowship logo on a white background.</desc>
+<rect width="1254" height="1254" fill="#ffffff"/>
+<defs>
+  <radialGradient id="silver" cx="39%" cy="48%" r="76%" fx="36%" fy="48%">
+    <stop offset="0" stop-color="#fafbfd"/>
+    <stop offset="0.34" stop-color="#e8eaf0"/>
+    <stop offset="0.66" stop-color="#bcc1cd"/>
+    <stop offset="1" stop-color="#9097a8"/>
+  </radialGradient>
+  <linearGradient id="road" x1="0.05" y1="0.1" x2="0.95" y2="0.9">
+    <stop offset="0" stop-color="#0b2c62"/>
+    <stop offset="0.55" stop-color="#031947"/>
+    <stop offset="1" stop-color="#071b4c"/>
+  </linearGradient>
+  <linearGradient id="outerArc" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#071b4c"/>
+    <stop offset="1" stop-color="#0b295c"/>
+  </linearGradient>
+  <linearGradient id="midArc" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#426aa3"/>
+    <stop offset="1" stop-color="#8b98b9"/>
+  </linearGradient>
+  <linearGradient id="cyanArc" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#78d7ee"/>
+    <stop offset="1" stop-color="#1ca9ce"/>
+  </linearGradient>
+  <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
+    <stop offset="0.35" stop-color="#c8f7ff" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#6ed7ec" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+    <feOffset dx="0" dy="2" result="off"/>
+    <feColorMatrix in="off" type="matrix" values="0 0 0 0 0.08 0 0 0 0 0.14 0 0 0 0 0.28 0 0 0 .22 0"/>
+    <feBlend in="SourceGraphic"/>
+  </filter>
+  <clipPath id="roadClip">
+    <path d="M458 622 C555 592 728 592 873 645 C859 689 829 727 784 755 C718 797 590 800 502 757 C473 743 453 726 437 710 C447 684 455 655 458 622 Z"/>
+  </clipPath>
+</defs>
+
+<!-- crescent -->
+<path d="M711 240
+         C575 210 444 267 379 378
+         C314 488 345 625 433 706
+         L471 675
+         C414 609 410 513 449 422
+         C493 323 589 258 711 240 Z"
+      fill="url(#silver)" />
+
+<!-- orbital arcs -->
+<path d="M494 602 C478 494 502 388 584 328 C662 271 779 273 841 327 C895 374 910 437 904 497"
+      fill="none" stroke="url(#outerArc)" stroke-width="2.8" stroke-linecap="round"/>
+<path d="M904 497 C902 585 866 667 803 713"
+      fill="none" stroke="#284d82" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+<path d="M505 611 C508 493 580 397 707 384 C784 376 838 448 846 568 C850 623 827 671 785 699"
+      fill="none" stroke="url(#midArc)" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M624 603 C692 537 794 500 903 498"
+      fill="none" stroke="url(#cyanArc)" stroke-width="2.3" stroke-linecap="round"/>
+
+<!-- road / horizon -->
+<path d="M458 622 C555 592 728 592 873 645 C859 689 829 727 784 755 C718 797 590 800 502 757 C473 743 453 726 437 710 C447 684 455 655 458 622 Z"
+      fill="url(#road)"/>
+<g clip-path="url(#roadClip)" fill="#ffffff">
+  <path d="M624 603 L433 704 L441 712 Z"/>
+  <path d="M624 603 L490 748 L499 754 Z"/>
+  <path d="M624 603 L614 790 L620 791 Z"/>
+  <path d="M624 603 L632 791 L638 790 Z"/>
+  <path d="M624 603 L750 760 L758 755 Z"/>
+  <path d="M624 603 L816 717 L824 709 Z"/>
+</g>
+<path d="M624 603 L620 790 L632 790 Z" fill="#69d2e4" clip-path="url(#roadClip)" opacity=".95"/>
+
+<!-- star / convergence -->
+<circle cx="624" cy="603" r="16" fill="url(#starGlow)"/>
+<path d="M608 603 H640 M624 587 V619 M613 592 L635 614 M635 592 L613 614"
+      stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity=".95"/>
+
+<!-- nodes -->
+<g filter="url(#softShadow)">
+  <circle cx="780" cy="295" r="12" fill="#06265a"/>
+  <circle cx="518" cy="431" r="11.5" fill="#07306b"/>
+  <circle cx="715" cy="384" r="12" fill="#5e7ead"/>
+  <circle cx="903" cy="498" r="12" fill="#2aa8cb"/>
+  <circle cx="846" cy="567" r="12" fill="#71798e"/>
+</g>
+
+<!-- typography -->
+<text x="627" y="891" text-anchor="middle"
+      fill="#041d50" font-family="Noto Sans, Arial, sans-serif"
+      font-size="85" font-weight="400" letter-spacing="7.2">The Lunar Fellowship</text>
+
+<line x1="210" y1="947" x2="407" y2="947" stroke="#061b4e" stroke-width="2"/>
+<line x1="846" y1="947" x2="1043" y2="947" stroke="#061b4e" stroke-width="2"/>
+<text x="627" y="972" text-anchor="middle"
+      fill="#061b4e" font-family="Noto Sans CJK SC, Noto Sans, sans-serif"
+      font-size="49" font-weight="300" letter-spacing="25">月曜同道会</text>
+</svg>
