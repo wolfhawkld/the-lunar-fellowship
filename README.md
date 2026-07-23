@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="idea/lunar_fellowship_logo_white_background.svg" alt="The Lunar Fellowship — 月曜同道会" width="420">
+  <img src="idea/lunar_fellowship_exact_embedded.svg" alt="The Lunar Fellowship — 月曜同道会" width="420">
 </p>
 
 <h1 align="center">The Lunar Fellowship</h1>
