@@ -9,6 +9,10 @@
   独立个体，共享智能，协同行动。
 </p>
 
+<p align="center">
+  <a href="https://wolfhawkld.github.io/the-lunar-fellowship/"><strong>打开 Lunar Hub · 成员入口 →</strong></a>
+</p>
+
 ## 我们是谁
 
 The Lunar Fellowship（月曜同道会）是一个由个人自发连接、跨公司、跨专业的 AI 协作网络。
@@ -35,8 +39,10 @@ The Lunar Fellowship（月曜同道会）是一个由个人自发连接、跨公
 
 ## 当前阶段
 
-项目正处于筹备期。名称与初步定位已经形成，Logo、活动形式和协作机制仍将由参与者共同讨论和完善。
+项目处于启动期。名称与初步定位已经形成，首版 Lunar Hub、Chat-first
+协作方式和第一次 Lunar Talk 方案已进入试运行，后续由成员共同讨论和迭代。
 
+- [打开 Lunar Hub](https://wolfhawkld.github.io/the-lunar-fellowship/)
 - [查看初始提案](idea/initial_proposal.md)
 - [查看 Logo 设计文件](idea/)
 - 欢迎通过 Issue 对定位、Logo 和后续活动提出建议

@@ -1,2 +1,11 @@
 # Local agent working memory; do not publish to the collaboration repository.
 memory/
+
+# Local environment files.
+.env
+.env.*
+!.env.example
+
+# Operating-system and editor noise.
+.DS_Store
+*.log
