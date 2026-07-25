@@ -59,7 +59,7 @@
       .map((card) => `${card.dataset.candidate}（${card.dataset.label}）`);
 
     return [
-      "🌙 First Orbit 时间回复",
+      "🌙 First Orbit 时间意向",
       "",
       `可完整参加：${selectedLabels.length ? selectedLabels.join("、") : "尚未选择"}`,
       `午间参与环境：${environmentLabels[state.environment] || "尚未说明"}`,
@@ -93,7 +93,7 @@
     copyButton.disabled = state.selected.size === 0;
     copyButton.textContent = state.confirmedAt
       ? "再次复制已确认结果"
-      : "确认我的选择";
+      : "确认我的时间意向";
     if (confirmationStatus) {
       confirmationStatus.hidden = !state.confirmedAt;
     }
@@ -102,7 +102,7 @@
   function resetCopyState() {
     copyButton.textContent = state.confirmedAt
       ? "再次复制已确认结果"
-      : "确认我的选择";
+      : "确认我的时间意向";
     if (manualCopy) manualCopy.hidden = true;
   }
 
