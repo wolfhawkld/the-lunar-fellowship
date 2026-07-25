@@ -8,6 +8,7 @@
   const replyOutput = document.querySelector("#generated-reply");
   const copyButton = document.querySelector("#copy-reply");
   const manualCopy = document.querySelector("#manual-copy");
+  const confirmationStatus = document.querySelector("#confirmation-status");
 
   if (!cards.length || !replyOutput || !copyButton) return;
 
@@ -15,6 +16,7 @@
     selected: new Set(),
     environment: "",
     note: "",
+    confirmedAt: "",
   };
 
   const environmentLabels = {
@@ -33,6 +35,7 @@
       }
       state.environment = parsed.environment || "";
       state.note = parsed.note || "";
+      state.confirmedAt = parsed.confirmedAt || "";
     } catch {
       window.localStorage.removeItem(storageKey);
     }
@@ -45,6 +48,7 @@
         selected: Array.from(state.selected),
         environment: state.environment,
         note: state.note,
+        confirmedAt: state.confirmedAt,
       }),
     );
   }
@@ -87,11 +91,24 @@
     if (noteInput) noteInput.value = state.note;
     replyOutput.textContent = buildReply();
     copyButton.disabled = state.selected.size === 0;
+    copyButton.textContent = state.confirmedAt
+      ? "再次复制已确认结果"
+      : "确认我的选择";
+    if (confirmationStatus) {
+      confirmationStatus.hidden = !state.confirmedAt;
+    }
   }
 
   function resetCopyState() {
-    copyButton.textContent = "复制群回复";
+    copyButton.textContent = state.confirmedAt
+      ? "再次复制已确认结果"
+      : "确认我的选择";
     if (manualCopy) manualCopy.hidden = true;
+  }
+
+  function clearConfirmation() {
+    state.confirmedAt = "";
+    resetCopyState();
   }
 
   async function copyText(text) {
@@ -117,7 +134,7 @@
 
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      resetCopyState();
+      clearConfirmation();
       const id = card.dataset.candidate;
       if (state.selected.has(id)) {
         state.selected.delete(id);
@@ -131,7 +148,7 @@
 
   environmentInputs.forEach((input) => {
     input.addEventListener("change", () => {
-      resetCopyState();
+      clearConfirmation();
       state.environment = input.value;
       saveState();
       render();
@@ -139,16 +156,22 @@
   });
 
   noteInput?.addEventListener("input", () => {
-    resetCopyState();
+    clearConfirmation();
     state.note = noteInput.value.slice(0, 80);
     saveState();
     render();
   });
 
   copyButton.addEventListener("click", async () => {
+    if (!state.confirmedAt) {
+      state.confirmedAt = new Date().toISOString();
+      saveState();
+      render();
+    }
+
     try {
       await copyText(buildReply());
-      copyButton.textContent = "已复制，发到 Lunar Chat";
+      copyButton.textContent = "已确认并复制";
       window.setTimeout(resetCopyState, 2400);
     } catch {
       if (manualCopy) manualCopy.hidden = false;

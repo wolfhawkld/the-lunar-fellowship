@@ -920,6 +920,54 @@ summary:focus-visible {
   line-height: 1.6;
 }
 
+.confirmation-status {
+  display: flex;
+  margin-top: 14px;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #b9dfd5;
+  border-radius: 12px;
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.confirmation-status[hidden] {
+  display: none;
+}
+
+.confirmation-status > span {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--green);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.confirmation-status p,
+.confirmation-status strong,
+.confirmation-status small {
+  display: block;
+  margin: 0;
+}
+
+.confirmation-status strong {
+  font-size: 12px;
+}
+
+.confirmation-status small {
+  margin-top: 2px;
+  color: #497469;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
 .manual-copy {
   color: #a34d3c;
   font-weight: 700;

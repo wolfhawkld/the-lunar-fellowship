@@ -295,13 +295,27 @@
                 class="button button-primary copy-button"
                 disabled
               >
-                复制群回复
+                确认我的选择
               </button>
             </div>
 
+            <div
+              id="confirmation-status"
+              class="confirmation-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            >
+              <span aria-hidden="true">✓</span>
+              <p>
+                <strong>选择已在本机确认</strong>
+                <small>请粘贴发送到 Lunar Chat，完成共享提交。</small>
+              </p>
+            </div>
+
             <p class="privacy-note">
-              当前选择只保存在你的浏览器中，不会自动上传。复制后发到 Lunar
-              Chat 即可；共享计票将在后续接入成员限定的 GitHub Discussions。
+              确认按钮只会把选择保存在你的浏览器中并复制回复，不会自动上传或计票。发送到
+              Lunar Chat 后，其他成员和召集人才会看到。
             </p>
             <p id="manual-copy" class="manual-copy" role="status" hidden>
               浏览器未允许自动复制，请从上方回复框中手动复制。
