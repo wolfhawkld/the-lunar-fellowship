@@ -39,10 +39,11 @@ The Lunar Fellowship（月曜同道会）是一个由个人自发连接、跨公
 
 ## 当前阶段
 
-项目处于启动期。名称与初步定位已经形成，首版 Lunar Hub、Chat-first
-协作方式和第一次 Lunar Talk 方案已进入试运行，后续由成员共同讨论和迭代。
+项目已进入持续分享与协作探索阶段。2026 年 9 月 22 日完成的第二次分享与讨论，从“注意力是 AI 协作的瓶颈”出发，连接了 living memory、可成长知识图谱、WorkBuddy、Jev 模拟实验与认知扩展，并形成了一个待成员认领的开源协作方向。
 
 - [打开 Lunar Hub](https://wolfhawkld.github.io/the-lunar-fellowship/)
+- [第二次分享：Attention, Living Memory & Agency](docs/events/session-01-attention-living-memory-and-agency.md)
+- [候选 Lunar Lab：Living Memory Open Collaboration](docs/labs/living-memory-open-collaboration.md)
 - [查看初始提案](idea/initial_proposal.md)
 - [查看 Logo 设计文件](idea/)
 - 欢迎通过 Issue 对定位、Logo 和后续活动提出建议
