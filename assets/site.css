@@ -650,6 +650,7 @@ summary:focus-visible {
 
 .section-heading h2,
 .talk-intro h2,
+.sessions-heading h2,
 .constellation-copy h2,
 .participation-card h2 {
   margin-bottom: 14px;
@@ -664,6 +665,7 @@ summary:focus-visible {
 .section-heading > p:last-child,
 .section-heading-split > p,
 .talk-intro > div > p:last-child,
+.sessions-heading > div > p:last-child,
 .constellation-copy > p:last-child,
 .participation-card > p {
   margin-bottom: 0;
@@ -1101,6 +1103,185 @@ summary:focus-visible {
     0 0 0 80px rgba(142, 201, 249, 0.025),
     0 0 0 160px rgba(142, 201, 249, 0.016);
   content: "";
+}
+
+.sessions-heading {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 60px;
+  padding-bottom: 40px;
+}
+
+.sessions-heading h2 {
+  max-width: 780px;
+  color: var(--white);
+}
+
+.sessions-heading > div > p:last-child {
+  max-width: 760px;
+  color: #aebed0;
+}
+
+.sessions-heading > .text-link {
+  justify-self: end;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+.session-list {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--line-dark);
+}
+
+.session-entry {
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.session-entry > summary {
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1fr) auto 38px;
+  align-items: center;
+  gap: 22px;
+  padding: 26px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.session-entry > summary::-webkit-details-marker {
+  display: none;
+}
+
+.session-round,
+.session-summary-main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.session-round {
+  gap: 5px;
+}
+
+.session-round small,
+.session-summary-main small {
+  color: #75a8d0;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.session-round strong {
+  color: #dcebf7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.session-summary-main {
+  gap: 5px;
+}
+
+.session-summary-main > strong {
+  overflow: hidden;
+  color: #f2f7fb;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 22px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.session-summary-main > span:last-child {
+  overflow: hidden;
+  color: #92a8bd;
+  font-size: 11px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.session-state {
+  display: inline-flex;
+  padding: 6px 10px;
+  border: 1px solid rgba(132, 198, 179, 0.2);
+  border-radius: 999px;
+  color: #9bd7c5;
+  background: rgba(63, 143, 120, 0.12);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.session-toggle {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  border: 1px solid rgba(151, 207, 251, 0.28);
+  border-radius: 50%;
+  color: #b9dcf5;
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform 180ms ease;
+}
+
+.session-entry[open] .session-toggle {
+  transform: rotate(45deg);
+}
+
+.session-entry[open] > summary {
+  border-bottom: 1px solid rgba(151, 207, 251, 0.12);
+}
+
+.session-content {
+  padding: 30px 0 46px 130px;
+}
+
+.session-lead {
+  max-width: 880px;
+  margin: 0;
+  color: #b2c4d5;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.session-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 54px;
+  margin-top: 34px;
+}
+
+.session-body .timeline-item {
+  min-height: 146px;
+}
+
+.session-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-dark);
+}
+
+.session-links a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+  color: #d7e8f6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.session-links a:hover {
+  border-color: #d7e8f6;
 }
 
 .talk-intro {
@@ -1823,6 +2004,15 @@ summary:focus-visible {
     gap: 20px;
   }
 
+  .session-entry > summary {
+    grid-template-columns: 96px minmax(0, 1fr) auto 34px;
+    gap: 16px;
+  }
+
+  .session-content {
+    padding-left: 112px;
+  }
+
   .people-grid {
     grid-template-columns: 1fr;
   }
@@ -1898,6 +2088,46 @@ summary:focus-visible {
   .talk-layout {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .sessions-heading,
+  .session-body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sessions-heading > .text-link {
+    justify-self: start;
+  }
+
+  .session-entry > summary {
+    grid-template-columns: 82px minmax(0, 1fr) 34px;
+    gap: 14px;
+  }
+
+  .session-round {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+  }
+
+  .session-summary-main {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .session-state {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .session-toggle {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+  }
+
+  .session-content {
+    padding-left: 0;
   }
 
   .candidate-grid {
@@ -2047,6 +2277,7 @@ summary:focus-visible {
 
   .section-heading h2,
   .talk-intro h2,
+  .sessions-heading h2,
   .constellation-copy h2 {
     font-size: 34px;
   }
@@ -2088,6 +2319,58 @@ summary:focus-visible {
 
   .event-facts dl {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .session-entry > summary {
+    grid-template-columns: minmax(0, 1fr) 32px;
+    gap: 10px 14px;
+    padding-block: 22px;
+  }
+
+  .session-round {
+    grid-row: 1;
+    grid-column: 1;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .session-summary-main {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .session-summary-main > strong {
+    font-size: 18px;
+    white-space: normal;
+  }
+
+  .session-summary-main > span:last-child {
+    display: none;
+  }
+
+  .session-state {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .session-toggle {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+  }
+
+  .session-content {
+    padding: 24px 0 38px;
+  }
+
+  .session-lead {
+    font-size: 12px;
+  }
+
+  .session-links {
+    align-items: flex-start;
+    flex-direction: column;
     gap: 12px;
   }
 
